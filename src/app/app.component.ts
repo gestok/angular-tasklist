@@ -5,30 +5,25 @@ const filters = [
   (item: TaskItem) => item,
   (item: TaskItem) => !item.isComplete,
   (item: TaskItem) => item.isComplete,
-]
+];
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  items : TaskItem[] = [
+  items: TaskItem[] = [
     new TaskItem('To Learn Angular'),
     new TaskItem('Get Coffee', true),
-    new TaskItem('Go to Super Market')
+    new TaskItem('Go to Super Market'),
   ];
-  listFilter : string = '0';
-  newTaskText = '';
+
+  listFilter: string = '0';
+
   title = 'angular-tasklist';
-  
-  get visibleItems() : TaskItem[] {
+
+  get visibleItems(): TaskItem[] {
     return this.items.filter(filters[parseInt(this.listFilter)]);
   }
-
-  addNewTask(){
-    this.items.push(new TaskItem(this.newTaskText));
-    this.newTaskText = '';
-  }
-
 }
