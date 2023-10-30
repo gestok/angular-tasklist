@@ -1,0 +1,21 @@
+<div *ngIf="tasks.length===0; else showItems">
+    No Wishes!
+  </div>
+
+  <ng-template #showItems>
+    <ul class="tasklist">
+      <li *ngFor="let task of tasks; index as i">
+        <div class="form-check">
+          <label class="form-check-label">
+            <input
+              type="checkbox"
+              class="checkbox"
+              [checked]="task.isComplete"
+              [attr.data-index]="i"
+              (click)="toggleItem(task)"
+            > {{task.taskText}}
+          </label>
+        </div>
+      </li>
+    </ul>
+  </ng-template>

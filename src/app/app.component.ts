@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { WishItem } from 'src/shared/models/wishItem';
+import { TaskItem } from 'src/shared/models/taskItem';
 
 const filters = [
-  (item: WishItem) => item,
-  (item: WishItem) => !item.isComplete,
-  (item: WishItem) => item.isComplete,
+  (item: TaskItem) => item,
+  (item: TaskItem) => !item.isComplete,
+  (item: TaskItem) => item.isComplete,
 ]
 
 @Component({
@@ -13,26 +13,22 @@ const filters = [
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  items : WishItem[] = [
-    new WishItem('To Learn Angular'),
-    new WishItem('Get Coffee', true),
-    new WishItem('Go to Super Market')
+  items : TaskItem[] = [
+    new TaskItem('To Learn Angular'),
+    new TaskItem('Get Coffee', true),
+    new TaskItem('Go to Super Market')
   ];
   listFilter : string = '0';
-  newWishText = '';
+  newTaskText = '';
   title = 'angular-tasklist';
   
-  get visibleItems() : WishItem[] {
+  get visibleItems() : TaskItem[] {
     return this.items.filter(filters[parseInt(this.listFilter)]);
   }
 
-  addNewWish(){
-    this.items.push(new WishItem(this.newWishText));
-    this.newWishText = '';
-  }
-
-  toggleItem(item: any){
-    item.isComplete = !item.isComplete;
+  addNewTask(){
+    this.items.push(new TaskItem(this.newTaskText));
+    this.newTaskText = '';
   }
 
 }
