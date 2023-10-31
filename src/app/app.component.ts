@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TaskItem } from 'src/shared/models/taskItem';
+import EventService from 'src/shared/services/EventService';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,13 @@ export class AppComponent {
     new TaskItem('Get Coffee', true),
     new TaskItem('Go to Super Market'),
   ];
+
+  constructor() {
+    EventService.listen('removeTask', (task: any) => {
+      // remove task
+      console.log(task);
+    });
+  }
 
   filter: any;
 }

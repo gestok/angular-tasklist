@@ -1,11 +1,20 @@
-<div class="form-check">
-  <label class="form-check-label">
-    <input
-      type="checkbox"
-      class="checkbox"
-      [checked]="taskStatus"
-      (click)="toggleTaskStatus()"
-    />
-    {{ taskText }}
-  </label>
-</div>
+<li class="d-flex justify-content-between">
+  <div class="form-check">
+    <label class="form-check-label" [ngClass]="cssClasses">
+      <input
+        type="checkbox"
+        class="checkbox"
+        [checked]="taskStatus"
+        (click)="toggleTaskStatus()"
+      />
+      {{ taskText }}
+    </label>
+  </div>
+  <div>
+    <button
+      type="button"
+      class="btn-close btn-close-white"
+      (click)="(removeTask)"
+    ></button>
+  </div>
+</li>
