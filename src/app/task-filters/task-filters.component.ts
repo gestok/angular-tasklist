@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TaskItem } from 'src/shared/models/taskItem';
 
 const filters = [
@@ -13,15 +13,17 @@ const filters = [
   styleUrls: ['./task-filters.component.scss'],
 })
 export class TaskFiltersComponent {
-  @Output() filter = new EventEmitter<any>();
+  @Input() filter: any;
+  @Output() filterChange = new EventEmitter<any>();
 
   ngOnInit(): void {
-    this.changeFilter('0');
+    this.updateFilter('0');
   }
 
   listFilter: string = '0';
 
-  changeFilter(value: string) {
-    this.filter.emit(filters[parseInt(value)]);
+  updateFilter(value: string) {
+    this.filter = filters[parseInt(value)];
+    this.filterChange.emit(this.filter);
   }
 }

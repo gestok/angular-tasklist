@@ -4,11 +4,8 @@ import { TaskItem } from 'src/shared/models/taskItem';
 @Component({
   selector: 'tasklist',
   templateUrl: './tasklist.component.html',
-  styleUrls: ['./tasklist.component.scss']
+  styleUrls: ['./tasklist.component.scss'],
 })
 export class TasklistComponent {
-  @Input() tasks : TaskItem[] = [];
-  toggleItem(item: any){
-    item.isComplete = !item.isComplete;
-  }
+  @Input() tasks: TaskItem[] = [];
 }

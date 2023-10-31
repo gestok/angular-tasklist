@@ -13,5 +13,5 @@ export class AppComponent {
     new TaskItem('Go to Super Market'),
   ];
 
-  filter: any = () => {};
+  filter: any;
 }

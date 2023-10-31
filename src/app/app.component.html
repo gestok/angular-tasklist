@@ -2,7 +2,7 @@
   <add-task (addTask)="tasks.push($event)"></add-task>
 
   <div class="row mt-3">
-    <task-filters (filter)="filter = $event"></task-filters>
+    <task-filters [(filter)]="filter"></task-filters>
   </div>
 
   <div class="row mt-3">
