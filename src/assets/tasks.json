@@ -1,6 +1,5 @@
 [
     {"taskText": "To Learn Angular", "isComplete": false},
     {"taskText": "Get Coffee", "isComplete": true},
-    {"taskText": "Go to Super Market", "isComplete": false},
     {"taskText": "Go to Super Market", "isComplete": false}
 ]

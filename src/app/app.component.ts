@@ -9,22 +9,24 @@ import { TasksService } from './tasks.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  tasks!: TaskItem[];
+  tasks: TaskItem[] = [];
 
-  constructor(
-    private events: EventService,
-    private tasksService: TasksService
-  ) {
-    this.events.listen('removeTask', (task: any) => {
+  constructor(events: EventService, private tasksService: TasksService) {
+    events.listen('removeTask', (task: any) => {
       let index = this.tasks.indexOf(task); // get index of current task
       this.tasks.splice(index, 1); // remove the current task
     });
   }
 
   ngOnInit(): void {
-    this.tasksService.getTasks().subscribe((data: any) => {
-      this.tasks = data;
-    });
+    this.tasksService.getTasks().subscribe(
+      (data: any) => {
+        this.tasks = data;
+      },
+      (error: any) => {
+        alert(error.message);
+      }
+    );
   }
 
   filter: any;
