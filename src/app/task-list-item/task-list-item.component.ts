@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { TaskItem } from 'src/shared/models/taskItem';
-import EventService from 'src/shared/services/EventService';
+import { EventService } from 'src/shared/services/EventService';
 
 @Component({
   selector: 'task-list-item',
@@ -10,6 +10,8 @@ import EventService from 'src/shared/services/EventService';
 export class TaskListItemComponent {
   @Input() task!: TaskItem;
 
+  constructor(private events: EventService) {}
+
   get cssClasses() {
     return {
       'strikeout ': this.task.isComplete,
@@ -17,7 +19,7 @@ export class TaskListItemComponent {
   }
 
   removeTask() {
-    EventService.emit('removeTask', this.task);
+    this.events.emit('removeTask', this.task);
   }
 
   toggleTaskStatus() {

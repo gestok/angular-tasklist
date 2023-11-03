@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TasklistComponent } from './tasklist/tasklist.component';
@@ -14,13 +15,10 @@ import { TaskListItemComponent } from './task-list-item/task-list-item.component
     TasklistComponent,
     AddTaskComponent,
     TaskFiltersComponent,
-    TaskListItemComponent
+    TaskListItemComponent,
   ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
