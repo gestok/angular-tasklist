@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskItem } from 'src/shared/models/taskItem';
 import { EventService } from 'src/shared/services/EventService';
-import { TasksService } from './tasks.service';
+import { TasksService } from './task-wrapper/tasks.service';
 
 @Component({
   selector: 'app-root',
