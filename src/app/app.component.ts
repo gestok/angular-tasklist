@@ -16,8 +16,8 @@ export class AppComponent {
 
   constructor() {
     EventService.listen('removeTask', (task: any) => {
-      // remove task
-      console.log(task);
+      let index = this.tasks.indexOf(task); // get index of current task
+      this.tasks.splice(index, 1); // remove the current task
     });
   }
 

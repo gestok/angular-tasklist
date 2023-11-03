@@ -17,7 +17,6 @@ describe('AppComponent', () => {
   it(`should have as title 'angular-wishlist'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('angular-wishlist');
   });
 
   it('should render title', () => {

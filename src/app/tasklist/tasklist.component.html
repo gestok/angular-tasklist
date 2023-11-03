@@ -2,10 +2,6 @@
 
 <ng-template #showItems>
   <ul class="tasklist">
-    <task-list-item
-      *ngFor="let task of tasks"
-      [taskText]="task.taskText"
-      [(taskStatus)]="task.isComplete"
-    ></task-list-item>
+    <task-list-item *ngFor="let task of tasks" [task]="task"></task-list-item>
   </ul>
 </ng-template>

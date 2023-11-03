@@ -4,17 +4,17 @@
       <input
         type="checkbox"
         class="checkbox"
-        [checked]="taskStatus"
+        [checked]="task.isComplete"
         (click)="toggleTaskStatus()"
       />
-      {{ taskText }}
+      {{ task.taskText }}
     </label>
   </div>
   <div>
     <button
       type="button"
       class="btn-close btn-close-white"
-      (click)="(removeTask)"
+      (click)="removeTask()"
     ></button>
   </div>
 </li>
