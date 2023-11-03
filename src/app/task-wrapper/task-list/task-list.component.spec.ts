@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TasklistComponent } from './tasklist.component';
+import { TasklistComponent } from './task-list.component';
 
 describe('TasklistComponent', () => {
   let component: TasklistComponent;
@@ -8,7 +8,7 @@ describe('TasklistComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TasklistComponent]
+      declarations: [TasklistComponent],
     });
     fixture = TestBed.createComponent(TasklistComponent);
     component = fixture.componentInstance;

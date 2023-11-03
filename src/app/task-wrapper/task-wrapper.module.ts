@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { TasklistComponent } from './tasklist/tasklist.component';
+import { TasklistComponent } from './task-list/task-list.component';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { TaskFiltersComponent } from './task-filters/task-filters.component';
 import { TaskListItemComponent } from './task-list-item/task-list-item.component';

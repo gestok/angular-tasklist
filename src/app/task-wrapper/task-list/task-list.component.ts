@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 import { TaskItem } from 'src/shared/models/taskItem';
 
 @Component({
-  selector: 'tasklist',
-  templateUrl: './tasklist.component.html',
-  styleUrls: ['./tasklist.component.scss'],
+  selector: 'task-list',
+  templateUrl: './task-list.component.html',
+  styleUrls: ['./task-list.component.scss'],
 })
 export class TasklistComponent {
   @Input() tasks: TaskItem[] = [];
