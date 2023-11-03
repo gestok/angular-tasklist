@@ -3,10 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { TasklistComponent } from './task-list/task-list.component';
-import { AddTaskComponent } from './add-task/add-task.component';
-import { TaskFiltersComponent } from './task-filters/task-filters.component';
-import { TaskListItemComponent } from './task-list-item/task-list-item.component';
+import { TasklistComponent } from '../todo/task-list/task-list.component';
+import { AddTaskComponent } from '../todo/add-task/add-task.component';
+import { TaskFiltersComponent } from '../todo/task-filters/task-filters.component';
+import { TaskListItemComponent } from '../todo/task-list-item/task-list-item.component';
 
 @NgModule({
   declarations: [
@@ -23,4 +23,4 @@ import { TaskListItemComponent } from './task-list-item/task-list-item.component
     TaskListItemComponent,
   ],
 })
-export class TaskWrapperModule {}
+export class TodoModule {}

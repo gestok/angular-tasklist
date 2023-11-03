@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { TaskWrapperModule } from './todo/todo.module';
+import { TodoModule } from './todo/todo.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, TaskWrapperModule],
+  imports: [BrowserModule, TodoModule],
   providers: [],
   bootstrap: [AppComponent],
 })
