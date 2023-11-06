@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { invalidEmailDomain } from './invalidEmailDomain';
 
 @Component({
   selector: 'contact',
@@ -14,7 +15,7 @@ export class ContactComponent {
 
   contactForm = new FormGroup({
     senderName: new FormControl('', Validators.required),
-    senderEmail: new FormControl('', [Validators.required, Validators.email]),
+    senderEmail: new FormControl('', [Validators.required, Validators.email, invalidEmailDomain]),
     senderMessage: new FormControl('', [Validators.required, Validators.minLength(this.MIN_MESSAGE_LENGTH)]),
   });
 
