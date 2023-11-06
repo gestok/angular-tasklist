@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { invalidEmailDomain } from './invalidEmailDomain';
+import { createInvalidDomainValidator } from './invalidEmailDomain';
+
+const invalidEmailDomain = createInvalidDomainValidator(['test.com', 'test.gr']);
 
 @Component({
   selector: 'contact',
