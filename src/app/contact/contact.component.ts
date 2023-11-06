@@ -8,6 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class ContactComponent {
   MIN_MESSAGE_LENGTH = 20;
+  textAreaContent: string = '';
 
   constructor() {}
 
@@ -17,7 +18,7 @@ export class ContactComponent {
     senderMessage: new FormControl('', [Validators.required, Validators.minLength(this.MIN_MESSAGE_LENGTH)]),
   });
 
-  submitForm() {
+  submitForm(): void {
     console.log(this.contactForm.valid);
   }
 }
